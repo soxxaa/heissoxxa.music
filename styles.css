@@ -129,7 +129,7 @@ body {
 }
 
 .music-card p {
-    padding: 0 0.5rem 0.5rem;
+    padding: 0 0.6rem 0.6rem;
     color: #888;
 }
 
@@ -376,7 +376,7 @@ body {
 }
 .presave-section {
     max-width: 800px;
-    margin: 0 auto 4rem auto;
+    margin: 2rem auto 4rem auto;
 }
 
 .presave-card {
