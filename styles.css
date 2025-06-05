@@ -1,0 +1,479 @@
+/* Global Styles */
+:root {
+    --primary-color: #ff3366;
+    --secondary-color: #1a1a1a;
+    --text-color: #ffffff;
+    --background-color: #0a0a0a;
+    --accent-color: #2d2d2d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(10, 10, 10, 0.95);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+.nav-brand {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+.nav-links a {
+    color: var(--text-color);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 400;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color);
+}
+
+.menu-toggle {
+    display: none;
+}
+
+/* Hero Section */
+.hero {
+    height: 100vh;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.2em;
+    animation: fadeInUp 1s ease;
+}
+
+.hero-content p {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    animation: fadeInUp 1s ease 0.2s;
+    animation-fill-mode: both;
+}
+
+.cta-button {
+    display: inline-block;
+    padding: 1rem 3rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+    animation: fadeInUp 1s ease 0.4s;
+    animation-fill-mode: both;
+}
+
+.cta-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Music Section */
+.music-section {
+    padding: 6rem 5%;
+    background-color: var(--secondary-color);
+}
+
+.music-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.music-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.5rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+.music-card h3 {
+    padding: 0.6rem;
+    font-size: 1.1rem;
+}
+
+.music-card p {
+    padding: 0 0.5rem 0.5rem;
+    color: #888;
+}
+
+.music-card {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+}
+
+.music-card:hover {
+    transform: translateY(-10px);
+}
+
+.album-art {
+    position: relative;
+    aspect-ratio: 1;
+}
+
+.album-art img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(255, 51, 102, 0.8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.album-art:hover .play-overlay {
+    opacity: 1;
+}
+
+.play-icon {
+    width: 48px;
+    height: 48px;
+    fill: white;
+}
+
+.music-card h3 {
+    padding: 1rem;
+    font-size: 1.2rem;
+}
+
+.music-card p {
+    padding: 0 1rem 1rem;
+    color: #888;
+}
+
+/* About Section */
+.about-section {
+    padding: 6rem 5%;
+    background-color: var(--background-color);
+}
+
+.about-content {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.about-content p {
+    font-size: 1.1rem;
+    color: #888;
+}
+
+/* Tour Section */
+.tour-section {
+    padding: 6rem 5%;
+    background-color: var(--secondary-color);
+}
+
+.tour-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.tour-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tour-card {
+    background-color: var(--accent-color);
+    padding: 2rem;
+    border-radius: 10px;
+    text-align: center;
+}
+
+.date {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-color);
+    margin-bottom: 1rem;
+}
+
+.venue {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.location {
+    color: #888;
+    margin-bottom: 1.5rem;
+}
+
+.ticket-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease;
+}
+
+.ticket-button:hover {
+    transform: translateY(-3px);
+}
+
+/* Contact Section */
+.contact-section {
+    padding: 6rem 5%;
+    background-color: var(--background-color);
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 2rem;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.social-icon {
+    width: 48px;
+    height: 48px;
+    fill: var(--text-color);
+    transition: fill 0.3s ease;
+}
+
+.social-icon:hover {
+    fill: var(--primary-color);
+}
+
+/* Footer */
+.footer {
+    padding: 2rem;
+    background-color: var(--secondary-color);
+    text-align: center;
+    color: #888;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .nav-links {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 10, 10, 0.95);
+        padding: 1rem 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-links a {
+        margin: 1rem 0;
+    }
+
+    .menu-toggle {
+        display: block;
+        cursor: pointer;
+    }
+
+    .bar {
+        width: 25px;
+        height: 3px;
+        background-color: var(--text-color);
+        margin: 5px 0;
+        transition: 0.3s;
+    }
+
+    .menu-toggle.active .bar:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+
+    .menu-toggle.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle.active .bar:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.2rem;
+    }
+}
+.presave-section {
+    max-width: 800px;
+    margin: 0 auto 4rem auto;
+}
+
+.presave-card {
+    background-color: var(--accent-color);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: transform 0.3s ease;
+    border: 2px solid var(--primary-color);
+}
+
+.presave-card:hover {
+    transform: translateY(-5px);
+}
+
+.presave-content {
+    display: flex;
+    height: 200px;
+}
+
+.presave-card .album-art {
+    position: relative;
+    width: 200px;
+    height: 100%;
+    flex-shrink: 0;
+    background: linear-gradient(45deg, var(--primary-color), #9933ff);
+}
+
+.presave-gradient {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to right, rgba(0,0,0,0), rgba(0,0,0,0.3));
+}
+
+.presave-info {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 2rem;
+}
+
+.presave-text h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.presave-text p {
+    font-size: 1rem;
+    color: #888;
+}
+
+.presave-button {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background-color: var(--primary-color);
+    color: var(--text-color);
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    white-space: nowrap;
+}
+
+.presave-button:hover {
+    transform: scale(1.05);
+    background-color: #ff4d7d;
+}
+
+@media (max-width: 600px) {
+    .presave-content {
+        flex-direction: column;
+        height: auto;
+    }
+
+    .presave-card .album-art {
+        width: 100%;
+        height: 200px;
+    }
+
+    .presave-info {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+    }
+}
+.presave-card h3 {
+    padding: 1rem;
+    font-size: 1.2rem;
+    text-align: center;
+}
+
+.presave-card p {
+    padding: 0 1rem 1rem;
+    color: #888;
+    text-align: center;
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 1080">
+    <defs>
+        <linearGradient id="heroGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+            <stop offset="100%" style="stop-color:#4a4a4a;stop-opacity:1" />
+        </linearGradient>
+        
+        <pattern id="pattern1" width="50" height="50" patternUnits="userSpaceOnUse">
+            <circle cx="25" cy="25" r="1" fill="#ff3366" opacity="0.5" />
+        </pattern>
+        
+        <filter id="glow2" x="-50%" y="-50%" width="200%" height="200%">
+            <feGaussianBlur stdDeviation="2" result="blur" />
+            <feComposite in="blur" in2="SourceGraphic" operator="over" />
+        </filter>
+    </defs>
+    
+    <!-- Background -->
+    <rect width="1920" height="1080" fill="url(#heroGrad)" />
+    
+    <!-- Pattern Background -->
+    <rect width="1920" height="1080" fill="url(#pattern1)" />
+    
+    <!-- Abstract Shapes -->
+    <g filter="url(#glow2)" opacity="0.1">
+        <path d="M0 400 Q 480 600 960 400 T 1920 400 V 1080 H 0 Z" fill="#ff3366" />
+        <path d="M0 600 Q 480 800 960 600 T 1920 600 V 1080 H 0 Z" fill="#ff3366" opacity="0.5" />
+        <path d="M0 800 Q 480 1000 960 800 T 1920 800 V 1080 H 0 Z" fill="#ff3366" opacity="0.3" />
+    </g>
+    
+    <!-- Diagonal Lines -->
+    <g stroke="#ff3366" stroke-width="1" opacity="0.1">
+        <line x1="0" y1="0" x2="1920" y2="1080" />
+        <line x1="480" y1="0" x2="2400" y2="1080" />
+        <line x1="-480" y1="0" x2="1440" y2="1080" />
+    </g>
+</svg>
